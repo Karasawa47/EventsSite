@@ -1,0 +1,123 @@
+﻿body {
+ font-size: 16px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-image: url(Images/nightDetroitSkyline1800x1200.jpg); 
+    
+  background-size: cover;
+    Background-attachment:fixed;
+    /*background: -webkit-radial-gradient(darkblue, black, darkred); /* Safari 5.1 to 6.0 */
+  /*background: -o-radial-gradient(darkblue, black, darkred); /* For Opera 11.6 to 12.0 */
+  /*background: -moz-radial-gradient(darkblue, black, darkred); /* For Firefox 3.6 to 15 */
+  /*background: radial-gradient(darkblue, black, darkred); /* Standard syntax */
+}
+.navbar{
+    background: -webkit-linear-gradient(left,  red,darkred,black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,   red,darkred,black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,  red,darkred,black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,  red,darkred,black); /* Standard syntax */
+    border-bottom-color:darkblue;
+    
+}
+.jumbotron{
+    background: -webkit-linear-gradient(left, darkblue,darkRed,black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, darkblue,darkRed,black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, darkblue,darkRed,black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, darkblue,darkRed,black); /* Standard syntax */
+    height:0;
+    margin:0;
+    padding:0;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+ div.ui-datepicker{
+    font-size: 15pt;
+    background: radial-gradient(to right,  darkgray,darkred,black);
+    color:white;
+
+}
+ .ui-datepicker-calendar {
+     background: radial-gradient(to right,  darkgray,darkred,black);
+ }
+
+
+ .Slider{float:right;
+         margin-top:10px
+    
+ }
+ .JumboHeader{
+     
+     width:40%;
+     float:left;
+     color:darkturquoise;
+ }
+ 
+ .row{
+     clear:both;
+     background-color:rgba(128, 128, 128,.4);
+     border-radius: 10px;
+ }
+ .col-md-3{
+     border-radius: 10px;
+ }
+ .jumbotron h1{
+     color:darkturquoise;
+ }
+ .btn{
+     border-width:1px;
+     border-radius: 5px;
+     border-color:#272424;
+     background: linear-gradient(to right,  red,darkred,black); /* Standard syntax */
+     color:white;
+ }
+
+
+#front-intro  {
+    padding-top: 20px; 
+    font-family:"Times New Roman", Times, serif;
+    
+    font-size:20px
+}
+.Categorytitle{
+color:antiquewhite
+}
+
+ .Logo{
+     margin-top:20px;
+      background-image: url(Images/cooltext1678985873.png);
+      width:433px;
+      height:101px;
+      background-size:cover;
+      margin-left:-40px;
+      border-radius: 40px;
+ }
+ .table{
+     background-color:rgba(128, 128, 128,.4);
+ }
+ .globe{
+     padding-top:20px;
+     float:left;
+     align-content:center;
+     width:100%;
+ }
+ #map_canvas {
+        width: 500px;
+        height: 400px;
+      }
+ .dl-horizontal dt{
+     width:120px;
+     font-size:18px;
+     color:#e8d069;
+ }

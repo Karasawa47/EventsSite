@@ -1,0 +1,116 @@
+﻿@model GCFinalProject.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Event Details</h2>
+
+<div>
+    @*<h4>Event</h4>*@
+    <div class="ImgURL" style="float:right;">
+        @{
+            if (Model.ImageUrl != null)
+            {
+                <img src="@Model.ImageUrl" alt="Event Image" style="width:350px;height:350px;" />
+            }
+        }
+    </div>
+ 
+    <dl class="dl-horizontal" style="width:400px;float:left;">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkUrl)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.LinkUrl)*@
+            <a class="btn btn-sm" href="@Model.LinkUrl">@Model.LinkUrl</a>
+        </dd>
+
+        <dt>
+            Category
+        </dt>
+
+        <dd>
+            @ViewBag.CategoryName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+
+    </dl>
+    
+
+    
+    <p style="width:400px; clear:both;">
+        <strong><span style="width:120px;font-size:18px;color:#e8d069">@Html.DisplayNameFor(model => model.EventDesc)</span></strong>
+        <br />
+        @Html.DisplayFor(model => model.EventDesc)
+    </p>
+    @Html.ActionLink("Comments", "Index", "Comment", new { id = Model.EventID }, new { @class = "btn btn-sm" }) 
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+    @Html.ActionLink("Back to Event List", "Index")
+</p>
