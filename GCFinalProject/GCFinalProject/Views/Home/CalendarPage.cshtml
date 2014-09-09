@@ -1,0 +1,63 @@
+﻿@using System.Globalization;
+@model IEnumerable<GCFinalProject.Models.Event>
+@{
+    ViewBag.Title = "Calendar";
+    var firstDay = new DateTime(ViewBag.Date.Year, ViewBag.Date.Month, 1);
+    var firstWeekDay = (int)firstDay.DayOfWeek;
+    var endDayofMonth = DateTime.DaysInMonth(ViewBag.Date.Year, ViewBag.Date.Month);
+    var endDateofMonth = new DateTime(ViewBag.Date.Year, ViewBag.Date.Month, DateTime.DaysInMonth(ViewBag.Date.Year, ViewBag.Date.Month)); 
+}
+
+<div class="container BigCalendar">
+    <div class="MonthH" style="float:none">
+        <h2>
+            @CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(ViewBag.Date.Month)
+        </h2>
+
+    </div>
+    <div class="CalendarBody" >
+        <div class="col-cal7 daysofweek" >
+            <p>Sunday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Monday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Tuesday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Wednesday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Thursday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Friday</p>
+        </div>
+        <div class="col-cal7 daysofweek" >
+            <p>Saturday</p>
+        </div>
+        @{
+            for (int i = 0; i < firstWeekDay; i++)
+            {
+            <div class="col-cal7" style="visibility:hidden">
+                
+            </div>
+            }
+            for (int i = 1; i <= endDayofMonth; i++)
+            {
+            <div class="col-cal7">
+                @i<br/>
+            @foreach (var e in Model)
+            {
+                if (e.StartDate.Day == i)
+                {
+                    @Html.DisplayFor(modelItem => e.EventName)
+                }
+            }
+
+            </div>
+            }
+        }
+    </div>
+</div>

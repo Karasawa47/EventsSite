@@ -121,3 +121,21 @@ color:antiquewhite
      font-size:18px;
      color:#e8d069;
  }
+ .BigCalendar {
+    margin-top: 30px;
+    background-color: rgba(50,50,50,.7);
+    border-radius: 20px;
+}
+ .CalendarBody {
+    float: left;
+    clear: both;
+}
+ .col-cal7{
+     margin:2px;
+     height:200px;
+     border-radius:10px;
+     background: radial-gradient( darkred,darkred,black); /* Standard syntax */
+ }
+ .daysofweek{
+     height:30px;
+ }

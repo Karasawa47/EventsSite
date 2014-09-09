@@ -1,5 +1,8 @@
-﻿using System;
+﻿using GCFinalProject.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,6 +11,8 @@ namespace GCFinalProject.Controllers
 {
     public class HomeController : Controller
     {
+        private EventSiteContext db = new EventSiteContext();
+
         public ActionResult Index()
         {
             return View();
@@ -26,6 +31,20 @@ namespace GCFinalProject.Controllers
             ViewBag.Message = "Detroit Events";
 
             return View();
+        }
+
+        public ActionResult CalendarPage()
+        {
+
+            ViewBag.Date = DateTime.Now;
+            var calendarDate = DateTime.Now;
+            var firstDate = new DateTime(calendarDate.Year, calendarDate.Month, 1);
+            var lastDate = new DateTime(calendarDate.Year, calendarDate.Month, DateTime.DaysInMonth(calendarDate.Year, calendarDate.Month));
+            var events = from e in db.Events
+                         where (e.StartDate >= DbFunctions.TruncateTime(firstDate) && e.StartDate <= DbFunctions.TruncateTime(lastDate))
+                     orderby e.StartDate
+                     select e;
+            return View(events);
         }
     }
 }
