@@ -52,7 +52,7 @@
             {
                 if (e.StartDate.Day == i)
                 {
-                    @Html.DisplayFor(modelItem => e.EventName)
+                     @Html.ActionLink(e.EventName, "Details", "Event", new { id=e.EventID },null)
                 }
             }
 
